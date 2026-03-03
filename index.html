@@ -177,7 +177,7 @@
 
       <!-- Nome do perfil vindo do Vue -->
       <a class="navbar-brand fw-bold" href="#">
-      Leonardo dos Santos<span class="brand-dot"></span>
+        {{ profile.nome }}<span class="brand-dot"></span>
       </a>
 
       <!-- Botao do menu mobile e tablet -->
@@ -209,8 +209,8 @@
 
           <!-- Localização e disponibilidade -->
           <div class="d-flex gap-2 mb-3">
-            <span class="pill">📍Várzea Grande</span>
-            <span class="pill">Disponível aos fins de semana</span>
+            <span class="pill">📍 {{ profile.local }}</span>
+            <span class="pill">Disponível para {{ profile.disponibilidade }}</span>
           </div>
 
           <!-- Nome -->
@@ -220,7 +220,7 @@
 
           <!-- Título profissional -->
           <p class="lead text-secondary mb-4">
-            Aspirante a Programador Back-And.
+            {{ profile.titulo }}
           </p>
 
           <!-- Lista de tecnologias (v-for) -->
@@ -275,14 +275,7 @@
       <div class="soft-card">
         <h2 class="fw-bold mb-2">Sobre mim</h2>
         <p class="text-secondary mb-0">
-          Sou estudante de Engenharia de Controle e 
-          Automação na UFMT, e também curso o técnico em 
-          Desenvolvimento de Sistemas no ICET-mt 🎓. 
-          Tenho grande interesse por tecnologia aplicada à 
-          solução de problemas reais 💻 😃, Gosto de aprender 
-          na prática, desenvolver projetos e usar a tecnologia 
-          como ferramenta de impacto positivo, especialmente 
-          em projetos sociais voltados a ajudar pessoas.
+          {{ profile.sobre }}
         </p>
       </div>
     </div>
@@ -442,9 +435,9 @@
         <hr class="my-4">
 
         <h5 class="fw-bold mb-3">Outros contatos</h5>
-        <p class="text-secondary mb-1">📧 leosantossilva159@gmail.com</p>
-        <p class="text-secondary mb-1">🔗 (65)99354-9470</p>
-        <p class="text-secondary mb-0">💻 https://br.linkedin.com/in/leonardo-dos-santos-silva-castor159</p>
+        <p class="text-secondary mb-1">📧 {{ profile.email }}</p>
+        <p class="text-secondary mb-1">🔗 {{ profile.linkedin }}</p>
+        <p class="text-secondary mb-0">💻 {{ profile.github }}</p>
       </div>
     </div>
   </section>
@@ -452,7 +445,7 @@
   <!-- RODAPe -->
   <footer>
     <div class="container text-center">
-      © {{ new Date().getFullYear() }} Leonardo — Portfólio
+      © {{ new Date().getFullYear() }} {{ profile.nome }} — Portfólio
     </div>
   </footer>
 
@@ -474,12 +467,13 @@ createApp({
       /* Dados do perfil PREENCHER COM OS PROPRIOS DADOS */
       profile:{
         nome:"Leonardo dos Santos",
-        titulo:"Tec. Desenvolvimento De Sistema • Front-end • Projetista de móveis planejados",
-        local:"Cuiabá-mt",
-        disponibilidade:"Freelance / CLT / PJ / PAGANDO BEM QUE MAL TEM",
-        tecnologias:["Vue.js","Bootstrap","HTML","CSS","JavaScript", "Python", "Figma", "C", "LabVIEW"],
+        titulo:"Engenharia de Controle e Automação • Back-end • Tec. Desenvolvimento De Sistema ",
+        titulo:"",
+        local:"Cuiaba - MT",
+        disponibilidade:"Freelance / CLT / Estágio",
+        tecnologias:["Vue.js", "Bootstrap", "HTML","CSS", "JavaScript", "Python", "Figma", "C", "LabVIEW"],
         fotoHero:"https://media.licdn.com/dms/image/v2/D4D03AQFB3UuWe5xhlw/profile-displayphoto-scale_400_400/B4DZv9jcTPJwAg-/0/1769485486999?e=1773273600&v=beta&t=GHJRIHLTb3sxf7LvkKlBS_EZFWzAW-4Hf_zkAzadW6c",
-        sobre:"sou estudante e estudo muito.",
+        sobre:"Sou estudante de Engenharia de Controle e Automação pela UFMT, e também curso o técnico em Desenvolvimento de Sistemas no ICET-MT 🎓. Tenho grande interesse por tecnologia aplicada à solução de problemas reais 💻 😃, gosto de aprender na prática, desenvolver projetos e usar a tecnologia como ferramenta de impacto positivo, especialmente em projetos sociais voltados a ajudar pessoas.",
         email:"leosantossilva159@gmail.com",
         linkedin:"https://br.linkedin.com/in/leonardo-dos-santos-silva-castor159",
         github:"https://github.com/castor159"
@@ -487,10 +481,10 @@ createApp({
 
       /* Estatisticas, pode alterar de acordo com suas experiencias */
       stats:[
-        { valor:"1+", label:"Anos" },
-        { valor:"2+", label:"Projetos" },
+        { valor:"2+", label:"Anos" },
+        { valor:"10+", label:"Projetos" },
         { valor:"100%", label:"Dedicação" },
-        { valor:"Back-And", label:"Foco" }
+        { valor:"Back-End", label:"Foco" }
       ],
 
       /* ===== INCLUSÃO: LISTA DE SERVIÇOS ===== */
@@ -498,7 +492,7 @@ createApp({
         { icone:"bi bi-layout-text-window-reverse", titulo:"Landing Pages", desc:"Páginas rápidas, responsivas e focadas em conversão." },
         { icone:"bi bi-phone", titulo:"Sites Responsivos", desc:"Layouts que funcionam perfeito no celular, tablet e desktop." },
         { icone:"bi bi-speedometer2", titulo:"Performance", desc:"Boas práticas para carregar rápido e rodar leve." },
-        { icone:"bi bi-diagram-3", titulo:"Componentização", desc:"Componentes reutilizáveis e manutenção fácil." }
+        { icone:"bi bi-gear", titulo:"maintenance", desc:"Manutenção de computadores." }
       ],
 
       /* Projetos do portfolio */
@@ -506,6 +500,27 @@ createApp({
         {
           titulo:"Portfólio Moderno",
           descricao:"Landing page responsiva com Vue e Bootstrap.",
+          thumb:"https://neilpatel.com/wp-content/uploads/2019/09/codigos-html-para-paginas-web-1-1200x675.webp",
+          link:"#",
+          github:"#"
+        },
+        {
+          titulo:"Sistema de Gestão Escolar",
+          descricao:"Sistema desenvolvido em linguagem C com foco na prática de lógica de programação.",
+          thumb:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Ne85VrfZEXjwS7GVOBQ-fxyfxesbs6_rFA&s",
+          link:"#",
+          github:"#"
+        },
+        {
+          titulo:"Projeto de Robótica em LabVIEW",
+          descricao:"",
+          thumb:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Ne85VrfZEXjwS7GVOBQ-fxyfxesbs6_rFA&s",
+          link:"#",
+          github:"#"
+        },
+        {
+          titulo:"Projetos UX e UI no Figma",
+          descricao:"",
           thumb:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Ne85VrfZEXjwS7GVOBQ-fxyfxesbs6_rFA&s",
           link:"#",
           github:"#"
