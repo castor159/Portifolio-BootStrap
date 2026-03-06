@@ -257,10 +257,10 @@
         </div>
 
         <!-- FOTO DE PERFIL GRANDE -->
-        <div class="col-lg-6">
+        <div class="col-lg-5">
           <img
             class="hero-photo"
-            :src="profile.fotoHero"
+            src="foto.jpeg"
             alt="Foto de destaque"
           />
         </div>
@@ -274,9 +274,9 @@
     <div class="container">
       <div class="soft-card">
         <h2 class="fw-bold mb-2">Sobre mim</h2>
-        <p class="text-secondary mb-0">
+        <h5 class="text-secondary mb-0">
           {{ profile.sobre }}
-        </p>
+        </h5>
       </div>
     </div>
   </section>
@@ -438,6 +438,7 @@
         <p class="text-secondary mb-1">📧 {{ profile.email }}</p>
         <p class="text-secondary mb-1">🔗 {{ profile.linkedin }}</p>
         <p class="text-secondary mb-0">💻 {{ profile.github }}</p>
+        <p class="text-secondary mb-0">📞 {{ profile.number }}</p>
       </div>
     </div>
   </section>
@@ -476,7 +477,8 @@ createApp({
         sobre:"Sou estudante de Engenharia de Controle e Automação pela UFMT, e também curso o técnico em Desenvolvimento de Sistemas no ICET-MT 🎓. Tenho grande interesse por tecnologia aplicada à solução de problemas reais 💻 😃, gosto de aprender na prática, desenvolver projetos e usar a tecnologia como ferramenta de impacto positivo, especialmente em projetos sociais voltados a ajudar pessoas.",
         email:"leosantossilva159@gmail.com",
         linkedin:"https://br.linkedin.com/in/leonardo-dos-santos-silva-castor159",
-        github:"https://github.com/castor159"
+        github:"https://github.com/castor159",
+        number:"(65)99354-9470"
       },
 
       /* Estatisticas, pode alterar de acordo com suas experiencias */
@@ -490,9 +492,10 @@ createApp({
       /* ===== INCLUSÃO: LISTA DE SERVIÇOS ===== */
       servicos:[
         { icone:"bi bi-layout-text-window-reverse", titulo:"Landing Pages", desc:"Páginas rápidas, responsivas e focadas em conversão." },
-        { icone:"bi bi-phone", titulo:"Sites Responsivos", desc:"Layouts que funcionam perfeito no celular, tablet e desktop." },
+        { icone:"bi bi-phone", titulo:"Responsive Web Design", desc:"Layouts que funcionam perfeito no celular, tablet e desktop." },
         { icone:"bi bi-speedometer2", titulo:"Performance", desc:"Boas práticas para carregar rápido e rodar leve." },
-        { icone:"bi bi-gear", titulo:"maintenance", desc:"Manutenção de computadores." }
+        { icone:"bi bi-gear", titulo:"Maintenance", desc:"Manutenção de computadores." },
+        { icone:"bi bi-table", titulo:"Database", desc:"Tópicos intermediários em banco de dados." }
       ],
 
       /* Projetos do portfolio */
@@ -507,21 +510,21 @@ createApp({
         {
           titulo:"Sistema de Gestão Escolar",
           descricao:"Sistema desenvolvido em linguagem C com foco na prática de lógica de programação.",
-          thumb:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Ne85VrfZEXjwS7GVOBQ-fxyfxesbs6_rFA&s",
+          thumb:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLSTxTbzWz_izYGGUlNUxKnv-sjhJQoCI-gQm2bluHam1GkPSWqULbnAG4wmUbuFkuCtsL5XWH9vOB7Gkk_MYl_mKXXi6264kTR01yb8aQ_Ktdku4qCJ8wK7S7qhf-XwUpoHrnpSpDhUA/s1600/bobao.jpg",
           link:"#",
           github:"#"
         },
         {
-          titulo:"Projeto de Robótica em LabVIEW",
+          titulo:"Projetos de Robótica em LabVIEW",
           descricao:"",
-          thumb:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Ne85VrfZEXjwS7GVOBQ-fxyfxesbs6_rFA&s",
+          thumb:"https://www.geocities.ws/ribsprojetos/imagens/LabView_2.jpg",
           link:"#",
           github:"#"
         },
         {
           titulo:"Projetos UX e UI no Figma",
           descricao:"",
-          thumb:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Ne85VrfZEXjwS7GVOBQ-fxyfxesbs6_rFA&s",
+          thumb:"https://www.designerscriativos.com.br/wp-content/uploads/2025/05/DWDDWWWD.png",
           link:"#",
           github:"#"
         }
